@@ -5,6 +5,7 @@ namespace Humps\Jmespath;
 use ArrayAccess;
 use Countable;
 use Iterator;
+use function JmesPath\search;
 
 class JmespathIterator implements ArrayAccess, Countable, Iterator
 {
@@ -46,14 +47,22 @@ class JmespathIterator implements ArrayAccess, Countable, Iterator
         // TODO: Implement offsetExists() method.
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($expression)
     {
-        // TODO: Implement offsetGet() method.
+        if (is_numeric($expression)) {
+            return $this->arr[$expression];
+        }
+
+        return search($this->parseExpression($expression), $this->arr);
     }
 
     public function offsetSet($offset, $value)
     {
-        // TODO: Implement offsetSet() method.
+        if (is_null($offset)) {
+            $this->arr[] = $value;
+        } else {
+            $this->arr[$offset] = $value;
+        }
     }
 
     public function offsetUnset($offset)
@@ -64,5 +73,26 @@ class JmespathIterator implements ArrayAccess, Countable, Iterator
     public function count()
     {
         return count($this->arr);
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return json_encode($this->arr, JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * @param $expression
+     * @return string
+     */
+    protected function parseExpression($expression)
+    {
+        if (preg_match("/^(?!\[)(\\*|([0-9]*:{1,2}[\-0-9]*))/", $expression)) {
+            return "[{$expression}]";
+        }
+
+        return $expression;
     }
 }
