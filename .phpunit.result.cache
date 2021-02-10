@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":211:{a:2:{s:7:"defects";a:1:{s:44:"JmespathIteratorTest::it_can_count_the_array";i:4;}s:5:"times";a:2:{s:35:"Tests\JmespathIteratorTest::example";d:0.008;s:44:"JmespathIteratorTest::it_can_count_the_array";d:0.013;}}}
