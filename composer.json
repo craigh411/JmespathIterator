@@ -1,5 +1,5 @@
 {
-  "name": "humps/iterator",
+  "name": "craigh/jmespath-iterator",
   "description": "Access a PHP array using Jmespath just like you would a standard array",
   "type": "library",
   "license": "MIT",
