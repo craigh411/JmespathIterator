@@ -10,7 +10,7 @@ You can install JmespathIterator via composer:
 
 ## Usage
 
-Create a new JmespathIterator object, then pass the Jmespath expression as the array key
+Create a new JmespathIterator object, then pass the Jmespath expression as the array key:
 
 ### Basic Example
 
@@ -80,7 +80,7 @@ $iterator = new JmespathIterator([
 echo $iterator[0]['foo.bar']; // output: 'qux'
 ```
 
-And iterate over it just like a standard array
+And iterate over it just like a standard array:
 
 ```php
 use Humps\Jmespath\JmespathIterator;
@@ -123,7 +123,7 @@ echo $iterator[1] // output: 'bar';
 
 To make things cleaner, you don't need to wrap slice expressions in square brackets, but you can if you want:
 
-```
+```php
 use Humps\Jmespath\JmespathIterator;
 
 $iterator = new JmespathIterator(['foo','bar','baz','qux', 'qux']);
@@ -135,9 +135,9 @@ var_dump($iterator['[0::2]']); // outputs: ['foo', 'baz', 'qux']
 ### Remember: It's Not Actually An Array!
 
 
-While a JmespathIterator object might feel like an array, it's not; but if you need it to be you can use the `toArray()` method
+While a JmespathIterator object might feel like an array, it's not; but if you need it to be you can use the `toArray()` method:
 
-```
+```php
 use Humps\Jmespath\JmespathIterator;
 
 $iterator = new JmespathIterator(['foo','bar','baz','qux', 'quxx']);
