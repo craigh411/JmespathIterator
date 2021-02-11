@@ -1,6 +1,6 @@
 # JmespathIterator
 
-JmespathIterator allows you to access a PHP array using [Jmespath](https://jmespath.org/) just like you would a standard array.
+`JmespathIterator` allows you to access a PHP array using [JMESPath](https://jmespath.org/) just like you would a standard array.
 
 ## Install
 
@@ -10,7 +10,7 @@ You can install JmespathIterator via composer:
 
 ## Usage
 
-Create a new JmespathIterator object, then pass the Jmespath expression as the array key:
+Create a new `JmespathIterator` object, then pass the Jmespath expression as the array key:
 
 ### Basic Example
 
@@ -65,7 +65,7 @@ var_dump($iterator['people[*].first']); // output: ["James", "Jacob", "Jayden"]
 
 ### Every Level is a JmespathIterator
 
-JmespathIterator always returns arrays as JmespathIterator objects, which means you can query nested arrays using Jmespath:
+`JmespathIterator` always returns arrays as `JmespathIterator` objects, which means you can query nested arrays using JMESPath:
 
 
 ```php
@@ -109,7 +109,7 @@ if(count($iterator)){
 
 ### Add Items like An Array
 
-Jmespath implements the `ArrayAccess` interface, so you can add array values just as you usually would:
+`JmespathIterator` implements the `ArrayAccess` interface, so you can add array values just as you usually would:
 
 ```php
 use Humps\Jmespath\JmespathIterator;
@@ -137,7 +137,7 @@ var_dump($iterator['[0::2]']); // outputs: ['foo', 'baz', 'qux']
 ### Remember: It's Not Actually An Array!
 
 
-While a JmespathIterator object might feel like an array, it's not; but if you need it to be you can use the `toArray()` method:
+While a `JmespathIterator` object might feel like an array, it's not; but if you need it to be you can use the `toArray()` method:
 
 ```php
 use Humps\Jmespath\JmespathIterator;
