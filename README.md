@@ -49,7 +49,7 @@ $iterator = new JmespathIterator([
       ],
 ]);
 
-var_dump($iterator['people[*].first']);
+var_dump($iterator['people[*].first']); // output: ["James", "Jacob", "Jayden"]
         
 ```
 
