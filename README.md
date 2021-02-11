@@ -125,7 +125,8 @@ While a JmespathIterator object might feel like an array, it's not; but if you n
 $iterator = new JmespathIterator(['foo','bar','baz','qux', 'quxx']);
 $array = $iterator->toArray();
 natsort($array);
-$newIterator = new JmespathIterator($array); // outpust: ['bar', 'baz','foo', 'qux', 'quxx']
+$newIterator = new JmespathIterator($array); 
+var_dump($newIterator); // outputs: ['bar', 'baz','foo', 'qux', 'quxx']
 ```
 
 
