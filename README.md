@@ -4,7 +4,7 @@ JmespathIterator allows you to access a PHP array using [Jmespath](https://jmesp
 
 ## Install
 
-You can install JmespathIterator via comopser:
+You can install JmespathIterator via composer:
 
 `composer require craigh/jmespath-iterator`
 
