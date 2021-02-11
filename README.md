@@ -10,7 +10,7 @@ You can install JmespathIterator via composer:
 
 ## Usage
 
-Create a new `JmespathIterator` object, then pass the Jmespath expression as the array key:
+Create a new `JmespathIterator` object, then pass the JMESPath expression as the array key:
 
 ### Basic Example
 
