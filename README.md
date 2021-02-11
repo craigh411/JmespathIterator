@@ -69,6 +69,8 @@ JmespathIterator always returns arrays as JmespathIterator objects, which means 
 
 
 ```php
+use Humps\Jmespath\JmespathIterator;
+
 $iterator = new JmespathIterator([
   [
     'foo' => [
