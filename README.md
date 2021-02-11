@@ -2,6 +2,11 @@
 
 JmespathIterator allows you to access a PHP array using [Jmespath](https://jmespath.org/) just like you would a standard array.
 
+## Install
+
+You can install JmespathIterator via comopser:
+
+`composer require craigh/jmespath-iterator`
 
 ## Usage
 
@@ -10,6 +15,9 @@ Create a new JmespathIterator object, then pass the Jmespath expression as the a
 ### Basic Example
 
 ```php
+
+use Humps\Jmespath\JmespathIterator;
+
 $iterator = new JmespathIterator([
   'foo' => [
     'bar' => [
@@ -24,6 +32,8 @@ echo $iterator['foo.bar.baz']; // output: 'qux'
 ### List Projection Example
 
 ```php
+use Humps\Jmespath\JmespathIterator;
+
 $iterator = new JmespathIterator([
   'people' =>
     [
@@ -73,6 +83,8 @@ echo $iterator[0]['foo.bar']; // output: 'qux'
 And iterate over it just like a standard array
 
 ```php
+use Humps\Jmespath\JmespathIterator;
+
 $iterator = new JmespathIterator([
   [
     'bar' => [
@@ -98,6 +110,8 @@ if(count($iterator)){
 Jmespath implements the `ArrayAccess` interface, so you can add array values just as you usually would:
 
 ```php
+use Humps\Jmespath\JmespathIterator;
+
 $iterator = new JmespathIterator();
 $iterator[] = 'foo';
 $iterator[] = 'bar';
@@ -110,6 +124,8 @@ echo $iterator[1] // output: 'bar';
 To make things cleaner, you don't need to wrap slice expressions in square brackets, but you can if you want:
 
 ```
+use Humps\Jmespath\JmespathIterator;
+
 $iterator = new JmespathIterator(['foo','bar','baz','qux', 'qux']);
 
 var_dump($iterator['0::2']); // outputs: ['foo', 'baz', 'qux']
@@ -122,6 +138,8 @@ var_dump($iterator['[0::2]']); // outputs: ['foo', 'baz', 'qux']
 While a JmespathIterator object might feel like an array, it's not; but if you need it to be you can use the `toArray()` method
 
 ```
+use Humps\Jmespath\JmespathIterator;
+
 $iterator = new JmespathIterator(['foo','bar','baz','qux', 'quxx']);
 $array = $iterator->toArray();
 natsort($array);
