@@ -1,6 +1,6 @@
 {
   "name": "humps/iterator",
-  "description": "Access a php array using jmespath",
+  "description": "Access a PHP array using Jmespath just like you would a standard array",
   "type": "library",
   "license": "MIT",
   "require": {
