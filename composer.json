@@ -1,0 +1,23 @@
+{
+  "name": "humps/iterator",
+  "description": "Access a php array using jmespath",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "mtdowling/jmespath.php": "^2.6"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Humps\\Jmespath\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "prefer-stable": true
+}
